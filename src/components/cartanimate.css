@@ -68,4 +68,10 @@
     .total-price, .checkout-btn {
       font-size: 0.9rem; /* Smaller font size */
     }
-    
+    .delete-btn{
+      color: red;
+      border: none;
+      font-size: 21px;
+      cursor: pointer;
+      margin-top: 3px;  
+    }
