@@ -1,7 +1,6 @@
 import { add, remove } from "../cartSlice/CartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-
 import "./ProductCard.css";
 export const ProductCard = ({ product }) => {
   const [isInCart, setIsInCart] = useState(false);

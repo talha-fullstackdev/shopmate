@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useTitle } from "../hooks/useTitle";
 import { useSelector } from "react-redux";
 import { MdDelete } from "react-icons/md";
-
 import { remove } from "../cartSlice/CartSlice";
 import { useDispatch } from "react-redux";
 import "./cartanimate.css";
@@ -38,7 +37,7 @@ export const CartAnimate = () => {
             <div className="cart-item" key={product.id}>
               <img src={product.image} alt={product.name} />
               <div className="cart-item-details">
-                <h2>{product.name}</h2>
+                <p>{product.name}</p>
                 <p>{product.description}</p>
                 <button
                   onClick={() => dispatch(remove(product))}
@@ -64,3 +63,4 @@ export const CartAnimate = () => {
     </div>
   );
 };
+
