@@ -3,10 +3,9 @@ import { CartCard } from "../components";
 import { useSelector } from "react-redux";
 export const Cart = () => {
   const products = useSelector((state)=>state.CartSlice.cartList)
-  const total = useSelector((state)=>state.CartSlice.total)
+  // const total = useSelector((state)=>state.CartSlice.total)
   useTitle("Cart");
-  
-
+  const total = useSelector((state) => state.CartSlice.cartList.reduce((total, product) => total + product.price, 0));
   return (
     <main>
       <section className="cart">
@@ -18,3 +17,4 @@ export const Cart = () => {
     </main>
   )
 }
+////////////////// updated for total

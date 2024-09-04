@@ -53,3 +53,12 @@
     background-color: #8e090f;
    
   }
+  
+  .colorFilters{
+    display: flex;
+    gap: 6px;
+
+  }
+  .color-btn{
+    cursor: pointer;
+  }
