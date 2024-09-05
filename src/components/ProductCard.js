@@ -9,11 +9,10 @@ export const ProductCard = ({ product }) => {
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedType, setSelectedType] = useState(null);
   const [showFilters, setShowFilters] = useState(false); 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
+
   const { id, name, price, image, colors, type } = product;
-
   const myProduct = useSelector((state) => state.CartSlice.cartList);
-
   useEffect(() => {
     const productInCart = myProduct.find((item) => item.id === id);
     setIsInCart(!!productInCart);
@@ -58,7 +57,7 @@ export const ProductCard = ({ product }) => {
           {colors.map((color) => (
             <label
               key={color}
-              className={`colorOption ${color.toLowerCase()} ${selectedColor === color ? "selected" : ""}`}
+              className={`colorOption ${color.toLowerCase()} ${selectedColor === color && "selected" }`}
             >
               <input
                 className="color-btn"
@@ -78,7 +77,7 @@ export const ProductCard = ({ product }) => {
           {type.map((types) => (
             <label
               key={types}
-              className={`typeOption ${types.toLowerCase()} ${selectedType === types ? "selected" : ""}`}
+              className={`typeOption ${types.toLowerCase()} ${selectedType === types && "selected" }`}
             >
               <input
                 className="type-btn"
@@ -99,7 +98,7 @@ export const ProductCard = ({ product }) => {
         {isInCart ? (
           <button
             className="remove"
-            onClick={() => dispatch(remove({ id, selectedColor, selectedType }))}
+            onClick={() => dispatch(remove(id))}
           >
             Remove
           </button>

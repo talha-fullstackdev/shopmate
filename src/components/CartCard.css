@@ -1,11 +1,20 @@
 .cartCard{
-    display: flex;    
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    border-radius: 5px;
-    margin: 30px 10px;
-    padding: 10px;
+  max-width: 742px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  /* margin: auto; */
+  margin: 30px 10px;
+  padding: 10px;
+  margin: auto;
+  margin-top: 20px;
+  gap: 140px;
+  }
+  .cartCard-details{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
   }
   
   .cartCard img{
@@ -23,8 +32,9 @@
     width: 100px;
     margin-right: 10px;
   }
-  
+
   .cartCard button{
+    width: 100px;
     border: 0px;
     background-color: #ac0d14;
     color: #FFFFFF;
