@@ -46,9 +46,8 @@ export const ProductCard = ({ product }) => {
     <div className="productCard">
       <img src={image} alt={name} />
       <p className="name">{name}</p>
-
       <button onClick={toggleFilters} className="filter-btn">
-        {showFilters ? "Hide Filters" : "Show Filters"}
+        {showFilters ? "hide options":"show options"}
       </button>
 
       <div className={`filters ${showFilters ? "show" : "hide"}`}>
@@ -98,7 +97,7 @@ export const ProductCard = ({ product }) => {
         {isInCart ? (
           <button
             className="remove"
-            onClick={() => dispatch(remove(id))}
+            onClick={() => dispatch(remove({id,product}))}
           >
             Remove
           </button>

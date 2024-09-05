@@ -5,7 +5,6 @@ import "./CartCard.css";
 export const CartCard = ({ product }) => {
   const { name, price, image, selectedColor, selectedType } = product;
   const dispatch = useDispatch();
-
   return (
     <div className="cartCard">
       <img src={image} alt={name} />

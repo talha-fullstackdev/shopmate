@@ -23,7 +23,6 @@ export const CartAnimate = () => {
       setIsVisible(false);
     }
   }, [products]);
-
   return (
     <div className={`cart-animate-wrapper ${isVisible ? "show" : ""}`}>
       <section className="cart">
@@ -35,12 +34,12 @@ export const CartAnimate = () => {
             <div className="cart-item" key={product.id}>
               <img src={product.image} alt={product.name} />
               <div className="cart-item-details">
-                <p>{product.name}</p>
+                <p className="product-name" >{product.name}</p>
                 {product.selectedColor && (
                   <p className="cart-item-color">Color: {product.selectedColor}</p>
                 )}
                 {product.selectedType && (
-                  <p className="cart-item-type">Type: {product.selectedType}</p>
+                  <p className="cart-item-color">Type: {product.selectedType}</p>
                 )}
                 <button
                   onClick={() => dispatch(remove(product))}

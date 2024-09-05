@@ -75,8 +75,16 @@
       cursor: pointer;
       margin-top: 3px;  
     }
+    .product-name{
+      color: red;
+    }
 
-
-
+.cart-item-color{
+  color: blue;
+}
+.product-name{
+  color: black;
+  font-weight: 600;
+}
 
     
