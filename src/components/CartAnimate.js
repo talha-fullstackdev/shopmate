@@ -12,10 +12,10 @@ export const CartAnimate = () => {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
     if (products.length > 0) {
-      setIsVisible(true);
+    
       const timer = setTimeout(() => {
         setIsVisible(false);
-      }, 3000); // Hide after 3 seconds
+      }, 3000);
       return () => {
         clearTimeout(timer);
       };
@@ -24,23 +24,24 @@ export const CartAnimate = () => {
     }
   }, [products]);
   return (
-    <div className={`cart-animate-wrapper ${isVisible ? "show" : ""}`}>
+    <div className={`cart-animate-wrapper ${isVisible && "show" }`}>
       <section className="cart">
         <div className="cart-items">
           <h1>
             Cart Items: {products.length} / ${total.toFixed(2)}
           </h1>
           {products.map((product) => (
+    
             <div className="cart-item" key={product.id}>
               <img src={product.image} alt={product.name} />
               <div className="cart-item-details">
                 <p className="product-name" >{product.name}</p>
-                {product.selectedColor && (
+            
                   <p className="cart-item-color">Color: {product.selectedColor}</p>
-                )}
-                {product.selectedType && (
+            
+           
                   <p className="cart-item-color">Type: {product.selectedType}</p>
-                )}
+            
                 <button
                   onClick={() => dispatch(remove(product))}
                   className="delete-btn"

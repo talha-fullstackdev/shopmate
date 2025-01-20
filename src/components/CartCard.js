@@ -1,10 +1,9 @@
-
 import { useDispatch } from "react-redux";
 import { remove } from "../cartSlice/CartSlice";
 import "./CartCard.css";
 export const CartCard = ({ product }) => {
-  const { name, price, image, selectedColor, selectedType } = product;
   const dispatch = useDispatch();
+  const { name, price, image, selectedColor, selectedType } = product;
   return (
     <div className="cartCard">
       <img src={image} alt={name} />
@@ -13,11 +12,12 @@ export const CartCard = ({ product }) => {
         {selectedColor && (
           <p className="productColor">Color: {selectedColor}</p>
         )}
-        {selectedType && (
-          <p className="productType">Type: {selectedType}</p>
-        )}
+        {selectedType && <p className="productType">Type: {selectedType}</p>}
         <p className="productPrice">${price}</p>
-        <button onClick={() => dispatch(remove(product))} className="remove-btn">
+        <button
+          onClick={() => dispatch(remove(product))}
+          className="remove-btn"
+        >
           Remove
         </button>
       </div>

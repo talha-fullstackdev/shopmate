@@ -17,8 +17,6 @@ const cartSlice = createSlice({
       toast.error("item removed");
     },
   },
-
 });
-
 export const { add, remove } = cartSlice.actions;
 export default cartSlice.reducer;

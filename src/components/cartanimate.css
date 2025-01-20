@@ -1,6 +1,4 @@
-
-    
-    .cart-animate-wrapper {
+.cart-animate-wrapper {
       position: fixed;
       top: 0;
       left: 0; /* Start from off-screen left */

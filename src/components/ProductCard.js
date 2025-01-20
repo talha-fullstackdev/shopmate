@@ -1,18 +1,16 @@
-
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { add, remove } from "../cartSlice/CartSlice";
 import "./ProductCard.css";
 import { toast } from "react-toastify";
 export const ProductCard = ({ product }) => {
+  const myProduct = useSelector((state) => state.CartSlice.cartList);
+  const dispatch = useDispatch();
   const [isInCart, setIsInCart] = useState(false);
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedType, setSelectedType] = useState(null);
-  const [showFilters, setShowFilters] = useState(false); 
-  const dispatch = useDispatch()
-
+  const [showFilters, setShowFilters] = useState(false);
   const { id, name, price, image, colors, type } = product;
-  const myProduct = useSelector((state) => state.CartSlice.cartList);
   useEffect(() => {
     const productInCart = myProduct.find((item) => item.id === id);
     setIsInCart(!!productInCart);
@@ -34,12 +32,12 @@ export const ProductCard = ({ product }) => {
     dispatch(add({ ...product, selectedColor, selectedType }));
     setSelectedColor(null);
     setSelectedType(null);
-    setShowFilters(!showFilters)
+    setShowFilters(!showFilters);
   };
 
   const toggleFilters = () => {
-    // setShowFilters((prev) => !prev); 
-    setShowFilters(!showFilters) // refactore the above line
+    // setShowFilters((prev) => !prev);
+    setShowFilters(!showFilters); // refactore the above line
   };
 
   return (
@@ -47,7 +45,7 @@ export const ProductCard = ({ product }) => {
       <img src={image} alt={name} />
       <p className="name">{name}</p>
       <button onClick={toggleFilters} className="filter-btn">
-        {showFilters ? "hide options":"show options"}
+        {showFilters ? "hide options" : "show options"}
       </button>
 
       <div className={`filters ${showFilters ? "show" : "hide"}`}>
@@ -56,7 +54,9 @@ export const ProductCard = ({ product }) => {
           {colors.map((color) => (
             <label
               key={color}
-              className={`colorOption ${color.toLowerCase()} ${selectedColor === color && "selected" }`}
+              className={`colorOption ${color.toLowerCase()} ${
+                selectedColor === color && "selected"
+              }`}
             >
               <input
                 className="color-btn"
@@ -76,7 +76,9 @@ export const ProductCard = ({ product }) => {
           {type.map((types) => (
             <label
               key={types}
-              className={`typeOption ${types.toLowerCase()} ${selectedType === types && "selected" }`}
+              className={`typeOption ${types.toLowerCase()} ${
+                selectedType === types && "selected"
+              }`}
             >
               <input
                 className="type-btn"
@@ -91,18 +93,19 @@ export const ProductCard = ({ product }) => {
           ))}
         </div>
       </div>
-
       <div className="action">
         <p>${price}</p>
         {isInCart ? (
           <button
             className="remove"
-            onClick={() => dispatch(remove({id,product}))}
+            onClick={() => dispatch(remove({ id, product }))}
           >
             Remove
           </button>
         ) : (
-          <button className="addto-cart" onClick={handleAddToCart}>Add To Cart</button>
+          <button className="addto-cart" onClick={handleAddToCart}>
+            Add To Cart
+          </button>
         )}
       </div>
     </div>
