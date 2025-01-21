@@ -7,12 +7,14 @@ export const CartAnimate = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.CartSlice.cartList);
   const total = useSelector((state) =>
-    state.CartSlice.cartList.reduce((total, product) => total + product.price, 0)
+    state.CartSlice.cartList.reduce(
+      (total, product) => total + product.price,
+      0
+    )
   );
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
     if (products.length > 0) {
-    
       const timer = setTimeout(() => {
         setIsVisible(false);
       }, 3000);
@@ -24,24 +26,24 @@ export const CartAnimate = () => {
     }
   }, [products]);
   return (
-    <div className={`cart-animate-wrapper ${isVisible && "show" }`}>
+    <div className={`cart-animate-wrapper ${isVisible && "show"}`}>
       <section className="cart">
         <div className="cart-items">
           <h1>
             Cart Items: {products.length} / ${total.toFixed(2)}
           </h1>
           {products.map((product) => (
-    
             <div className="cart-item" key={product.id}>
               <img src={product.image} alt={product.name} />
               <div className="cart-item-details">
-                <p className="product-name" >{product.name}</p>
-            
-                  <p className="cart-item-color">Color: {product.selectedColor}</p>
-            
-           
-                  <p className="cart-item-color">Type: {product.selectedType}</p>
-            
+                <p className="product-name">{product.name}</p>
+
+                <p className="cart-item-color">
+                  Color: {product.selectedColor}
+                </p>
+
+                <p className="cart-item-color">Type: {product.selectedType}</p>
+
                 <button
                   onClick={() => dispatch(remove(product))}
                   className="delete-btn"
