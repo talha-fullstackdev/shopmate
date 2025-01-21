@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { MdDelete } from "react-icons/md";
 import { remove } from "../cartSlice/CartSlice";
 import "./cartanimate.css";
+
 export const CartAnimate = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.CartSlice.cartList);
@@ -12,12 +13,20 @@ export const CartAnimate = () => {
       0
     )
   );
+
   const [isVisible, setIsVisible] = useState(false);
+
   useEffect(() => {
     if (products.length > 0) {
+      // Show the cart animation
+      setIsVisible(true);
+
+      // Set a timer to hide the cart animation after 3 seconds
       const timer = setTimeout(() => {
         setIsVisible(false);
       }, 3000);
+
+      // Clear the timer when component unmounts or when products change
       return () => {
         clearTimeout(timer);
       };
@@ -25,8 +34,9 @@ export const CartAnimate = () => {
       setIsVisible(false);
     }
   }, [products]);
+
   return (
-    <div className={`cart-animate-wrapper ${isVisible && "show"}`}>
+    <div className={`cart-animate-wrapper ${isVisible ? "show" : ""}`}>
       <section className="cart">
         <div className="cart-items">
           <h1>
@@ -37,13 +47,10 @@ export const CartAnimate = () => {
               <img src={product.image} alt={product.name} />
               <div className="cart-item-details">
                 <p className="product-name">{product.name}</p>
-
                 <p className="cart-item-color">
                   Color: {product.selectedColor}
                 </p>
-
                 <p className="cart-item-color">Type: {product.selectedType}</p>
-
                 <button
                   onClick={() => dispatch(remove(product))}
                   className="delete-btn"
