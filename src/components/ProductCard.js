@@ -45,7 +45,7 @@ export const ProductCard = ({ product }) => {
       <img src={image} alt={name} />
       <p className="name">{name}</p>
       <button onClick={toggleFilters} className="filter-btn">
-        {showFilters ? "hide options" : "show options"}
+        {showFilters ? "hide filters" : "show filters"}
       </button>
 
       <div className={`filters ${showFilters ? "show" : "hide"}`}>
