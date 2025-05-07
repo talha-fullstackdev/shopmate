@@ -35,8 +35,8 @@
   border: 0px;
   border-radius: 5px;
   font-size: 16px;
-  color: #FFFFFF;
-  background-color: #1C59AE;
+  color: #ffffff;
+  background-color: #1c59ae;
   padding: 7px 10px;
   cursor: pointer;
   max-width: 150px;
@@ -51,7 +51,7 @@
   border: 0px;
   border-radius: 5px;
   font-size: 16px;
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 7px 10px;
   cursor: pointer;
 }
@@ -85,7 +85,6 @@
   display: flex;
   gap: 4px;
   align-items: center;
-
 }
 
 /* Filters transition */
