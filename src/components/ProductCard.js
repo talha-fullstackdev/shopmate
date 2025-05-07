@@ -75,7 +75,7 @@ export const ProductCard = ({ product }) => {
           {type.map((types) => (
             <label
               key={types}
-              className={`typeOption ${types.toLowerCase()} ${
+              className={`typeOption type-btn  ${types.toLowerCase()} ${
                 selectedType === types && "selected"
               }`}
             >

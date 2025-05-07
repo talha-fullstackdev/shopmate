@@ -68,6 +68,7 @@
 
 .color-btn {
   cursor: pointer;
+  margin-right: 4px;
 }
 
 .filter-btn {
@@ -84,6 +85,7 @@
   display: flex;
   gap: 4px;
   align-items: center;
+
 }
 
 /* Filters transition */
@@ -102,4 +104,8 @@
 .filters.hide {
   max-height: 0; /* Collapse */
   opacity: 0; /* Invisible */
+}
+.type-btn {
+  margin-right: 5px;
+  margin-left: 3px;
 }
