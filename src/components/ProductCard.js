@@ -36,8 +36,7 @@ export const ProductCard = ({ product }) => {
   };
 
   const toggleFilters = () => {
-
-    setShowFilters(!showFilters); 
+    setShowFilters(!showFilters);
   };
 
   return (

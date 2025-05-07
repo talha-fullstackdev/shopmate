@@ -8,5 +8,5 @@ export const AllRoutes = () => {
         <Route path="/cart" element={<Cart />} />
       </Routes>
     </>
-  )
-}
+  );
+};
