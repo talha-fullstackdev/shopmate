@@ -1,4 +1,4 @@
-.cartCard{
+.cartCard {
   max-width: 742px;
   display: flex;
   justify-content: space-between;
@@ -10,46 +10,45 @@
   margin: auto;
   margin-top: 20px;
   gap: 140px;
-  }
-  .cartCard-details{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-  
-  .cartCard img{
-    width: 150px;
-    height: 100px;
-    margin-right: 10px;
-  }
-  
-  .cartCard .productName{
-    width: 350px;
-    margin-right: 10px;
-  }
-  
-  .cartCard .productPrice{
-    width: 100px;
-    margin-right: 10px;
-  }
+}
+.cartCard-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
 
-  .cartCard button{
-    width: 100px;
-    border: 0px;
-    background-color: #ac0d14;
-    color: #FFFFFF;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
+.cartCard img {
+  width: 150px;
+  height: 100px;
+  margin-right: 10px;
+}
+
+.cartCard .productName {
+  width: 350px;
+  margin-right: 10px;
+}
+
+.cartCard .productPrice {
+  width: 100px;
+  margin-right: 10px;
+}
+
+.cartCard button {
+  width: 100px;
+  border: 0px;
+  background-color: #ac0d14;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.cartCard button:hover {
+  background-color: #8e090f;
+}
+
+@media screen and (max-width: 680px) {
+  .cartCard img {
+    display: none;
   }
-  
-  .cartCard button:hover{
-    background-color: #8e090f;
-  }
-  
-  
-  @media screen and (max-width: 680px) {
-    .cartCard img{
-        display: none;
-    }
-  }
+}
