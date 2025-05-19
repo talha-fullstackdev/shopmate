@@ -26,8 +26,8 @@ export const ProductCard = ({ product }) => {
 
   const handleAddToCart = () => {
     if (!selectedColor || !selectedType) {
-      toast.error("Please select  color and  type.");
-      return;
+      return toast.error("Please select  color and  type.");
+     
     }
     dispatch(add({ ...product, selectedColor, selectedType }));
     setSelectedColor(null);
