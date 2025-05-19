@@ -14,7 +14,7 @@ export const ProductCard = ({ product }) => {
   useEffect(() => {
     const productInCart = myProduct.find((item) => item.id === id);
     setIsInCart(!!productInCart);
-  }, [myProduct, id]);
+  }, [myProduct,id]);
 
   const handleColorChange = (e) => {
     setSelectedColor(e.target.value);

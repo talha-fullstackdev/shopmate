@@ -3,9 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { MdDelete } from "react-icons/md";
 import { remove } from "../cartSlice/CartSlice";
 import "./cartanimate.css";
-
 export const CartAnimate = () => {
   const dispatch = useDispatch();
+    const [isVisible, setIsVisible] = useState(false);
   const products = useSelector((state) => state.CartSlice.cartList);
   const total = useSelector((state) =>
     state.CartSlice.cartList.reduce(
@@ -13,14 +13,9 @@ export const CartAnimate = () => {
       0
     )
   );
-
-  const [isVisible, setIsVisible] = useState(false);
-
   useEffect(() => {
     if (products.length > 0) {
-      // Show the cart animation
       setIsVisible(true);
-
       // Set a timer to hide the cart animation after 3 seconds
       const timer = setTimeout(() => {
         setIsVisible(false);
